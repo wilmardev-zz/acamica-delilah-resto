@@ -1,0 +1,12 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ppal-title {
+    text-align: center;
+}
+
+.content {
+    max-width: 80%;
+    margin: auto;
+}
