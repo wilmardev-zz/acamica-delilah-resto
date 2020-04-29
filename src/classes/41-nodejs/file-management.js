@@ -3,13 +3,16 @@ const fs = require("fs");
 
 const readFile = (url) => {
   // Método para leer un archivo
-  fs.readFile(url, (error, data) => {
-    if (error) {
-      console.log("ERROOOOOR!!! =>", error);
-      return;
-    }
-    console.log(data.toString("utf8"));
-  });
+  return new Promise((resolve, reject) => {
+    fs.readFile(url, (error, data) => {
+      if (error) {
+        console.log("ERROOOOOR!!! =>", error);
+        reject(error);
+      }
+      // console.log(data.toString('utf8'))
+      resolve(data.toString('utf8'));
+    });
+  })
 };
 
 const createFile = (fileName, data) => {
