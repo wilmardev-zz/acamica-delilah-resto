@@ -1,23 +1,12 @@
-// fs = Librería para interactuar con archivos del sistema operativo
-const fs = require("fs");
 const calculadora = require("./calculadora");
+const fileManagement = require("./file-management");
+const PATH_FILE = "./assets/files/class-40/swagger-doc-example.yml";
+const PATH_NEW_FILE = "src/classes/41-nodejs/hobbies.txt";
+const DATA_FILE = '{hobbies:["read", "swim", "playing videogames"]}';
 console.log("Bienvenidos a Node JS!!!");
 
-const readFile = () => {
-  // Método para leer un archivo
-  fs.readFile(
-    "./assets/files/class-40/swagger-doc-example.yml",
-    (error, data) => {
-      if (error) {
-        console.log("ERROOOOOR!!! =>", error);
-        return;
-      }
-      console.log(data.toString("utf8"));
-    }
-  );
-};
+fileManagement.readFile(PATH_FILE);
+fileManagement.createFile(PATH_NEW_FILE, DATA_FILE);
 
 const resultadoSuma = calculadora.sumar(5, 6);
 console.log("El resultado es => ", resultadoSuma);
-
-// readFile();

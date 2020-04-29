@@ -1,0 +1,1 @@
+{hobbies:["read", "swim", "playing videogames"]}
