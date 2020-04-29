@@ -1,14 +1,17 @@
 // fs = Librería para interactuar con archivos del sistema operativo
 const fs = require("fs");
 
+// Método para leer un archivo
 const readFile = (url) => {
-  // Método para leer un archivo
-  fs.readFile(url, (error, data) => {
-    if (error) {
-      console.log("ERROOOOOR!!! =>", error);
-      return;
-    }
-    console.log(data.toString("utf8"));
+  return new Promise((resolve, reject) => {
+    fs.readFile(url, (error, data) => {
+      if (error) {
+        console.log("ERROOOOOR!!! =>", error);
+        reject(error);
+      }
+      // console.log(data.toString("utf8"));
+      resolve(data.toString("utf8"));
+    });
   });
 };
 
@@ -24,5 +27,5 @@ const createFile = (fileName, data) => {
 
 module.exports = {
   readFile,
-  createFile
+  createFile,
 };
