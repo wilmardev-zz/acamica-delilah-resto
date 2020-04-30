@@ -1,1 +1,1 @@
-{"hobbies":["read", "swim", "playing videogames"]}
+{"hobbies":["eat", "code", "drink beer"]}
