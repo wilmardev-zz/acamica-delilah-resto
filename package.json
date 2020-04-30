@@ -1,0 +1,27 @@
+{
+  "name": "acamica-delilah-resto",
+  "version": "1.0.0",
+  "description": "Project for class to class development",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilmardev/acamica-delilah-resto.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "npm"
+  ],
+  "author": "Wilmar Duque & Yulian Zapata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilmardev/acamica-delilah-resto/issues"
+  },
+  "homepage": "https://github.com/wilmardev/acamica-delilah-resto#readme",
+  "dependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
