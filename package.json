@@ -1,0 +1,32 @@
+{
+  "name": "acamica-delilah-resto",
+  "version": "1.0.0",
+  "description": "Learning nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilmardev/acamica-delilah-resto.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "acamica"
+  ],
+  "author": "Esteban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilmardev/acamica-delilah-resto/issues"
+  },
+  "homepage": "https://github.com/wilmardev/acamica-delilah-resto#readme",
+  "dependencies": {
+    "cool-images": "^1.0.3",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
