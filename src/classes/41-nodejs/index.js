@@ -18,10 +18,12 @@ const listHobbies = () => {
 
 //create a new file if it doesn't exist
 const createNewFile = async () => {
-  const file = await fileManager.fileExists(PATH_FILE);
-  if (file) {
+  const exists = await fileManager.fileExists(PATH_FILE);
+  if (exists) {
+    console.log("File exists: ");
     printHobbies(PATH_FILE);
   } else {
+    console.log("File didn't exist");
     fileManager.createFile(PATH_NEW_FILE, DATA_FILE);
     printHobbies(PATH_NEW_FILE);
   }
