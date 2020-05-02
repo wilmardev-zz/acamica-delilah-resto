@@ -21,7 +21,7 @@ const fileExists = (url) => {
   return new Promise((resolve, reject) => {
     fs.access(url, (e) => {
       if (e) {
-        console.log(e);
+        // console.log(e);
         resolve(false);
       } else {
         resolve(true);
