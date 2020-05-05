@@ -1,46 +1,111 @@
-# acamica-delilah-resto
-Proyecto donde se hará un seguimiento clase a clase del Bloque 3: Delilah Restó
+# Acamica Delilah Restó
 
-# Comando útiles para git
-los siguientes son comandos basicos para utilizar en tu proyecto
+Proyecto Blque 3, donde se hará un seguimiento clase a clase de todos los ejercicios
+propuestos por Acámica con el fin de que sirva de repaso en cualquier momento del bloque.
 
-## guardar y subir  tus cambios al repositorio
--conocer en que rama me encuentro
- ``` git branch```
--conocer el estado
-  ```git status ```
-- agregar archivos a que sean versionados
-  ``` git add . ```
-- crear un comentario sobre los cambios
-  ``` git commit -am "mi comentario" ```
-- subir tus cambios al servidor de git
-  ``` git push origin NOMBRE_DE_MI_RAMA ```
-- traer tus cambios del servidor de git
-  ``` git pull origin NOMBRE_DE_MI_RAMA_REMOTA ```
+## Comando útiles para git
 
-## crear una nueva rama a partir de la rama de desarrollo
-- clonar el repositorio
-  ``` git clone  https://github.com/wilmardev/acamica-delilah-resto ```
-- actualizar su repositorio 
-  ``` git fetch origin  ```
-- seleccionar  la rama de desarrollo
-  ``` git checkout development  ```
-- crear una nueva rama
-  ``` git checkout -b feature/class-NUMERO--nombre ```
+### Los siguientes son comandos básicos para utilizar en tu proyecto:
 
-# Para ejecutar el archivo index.js (Node):
-  ```node src/classes/41-nodejs/index.js``` 
+#### Guardar y subir tus cambios al repositorio
 
-# comando basicos con npm
+- Conocer en que rama me encuentro
 
-- inicializar el proyecto
-    ```npm init```
-- para ejecutar  tu proyecto con npm
-   ```npm run dev```
+  ```bash
+  git branch
+  ```
+
+- Conocer el estado de la rama (si hay cambios sin guardar)
+
+  ```bash
+  git status
+  ```
+
+- Guardar **todos** los cambios
+
+  ```bash
+  git add .
+  ```
+
+- Asociat un comentario sobre los cambios guardados recientemente
+
+  ```bash
+  git commit -m "<<mi comentario>>"
+  ```
+
+- Subir tus cambios al servidor de git
+
+  ```bash
+  git push origin "<<nombre_rama>>"
+  ```
+
+- Obterner cambios del servidor de git
+  ```bash
+  git pull origin "<<nombre_rama>>"
+  ```
+
+### Crear una nueva rama a partir de otra rama
+
+- Clonar el repositorio
+
+  ```bash
+  git clone "<<nombre_repositorio>>"
+  git clone https://github.com/wilmardev/acamica-delilah-resto
+  ```
+
+- Actualizar su repositorio
+
+  ```bash
+  git fetch origin
+  ```
+
+- Pasarme a la rama de desarrollo
+
+  ```bash
+  git checkout development
+  ```
+
+- Crear una nueva rama
+
+  ```bash
+  git checkout -b feature/class-"numeroClase-nombreEstudiante"
+  ```
+
+## Para ejecutar el archivo index.js (Node):
+
+```bash
+  node src/classes/"nombreClase"/index.js
+```
+
+## Comando basicos con npm
+
+- Inicializar el proyecto:
+
+  ```bash
+  npm init
+  ```
+
 - instalar una dependencia
-   ```npm install nombre_libreria --save```
-- instalar una dependencia de desarrollo
-   ```npm install nombre_libreria --save-dev```
-- instalar una libreria global
-   ```npm install nombre_libreria -g ```
 
+  ```bash
+  npm install nombre_libreria --save
+  ```
+
+- Instalar una dependencia de desarrollo
+
+  ```bash
+  npm install nombre_libreria --save-dev
+  ```
+
+- Instalar una libreria de manera global
+
+  ```bash
+  npm install nombre_libreria -g
+  ```
+
+  - **Nota:** Si clonaste un proyecto debes de ejecutar el siguiente comando
+  para obtener todas las depencias y este funcione correctamente:
+
+    ```bash
+    npm install
+    ```
