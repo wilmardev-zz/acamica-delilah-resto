@@ -25,7 +25,14 @@ const createFile = (fileName, data) => {
   });
 };
 
+const existFile = (fileName) => {
+  return new Promise((resolve, reject) => {
+    fs.exists(fileName, (exist) => resolve(exist));
+  });
+};
+
 module.exports = {
   readFile,
   createFile,
+  existFile,
 };
