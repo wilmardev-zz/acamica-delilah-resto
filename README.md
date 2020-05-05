@@ -11,19 +11,19 @@ propuestos por Acámica con el fin de que sirva de repaso en cualquier momento d
 
 - Conocer en que rama me encuentro
 
-  ```bash
+  ```
   git branch
   ```
 
 - Conocer el estado de la rama (si hay cambios sin guardar)
 
-  ```bash
+  ```
   git status
   ```
 
 - Guardar **todos** los cambios
 
-  ```bash
+  ```
   git add .
   ```
 
@@ -40,6 +40,7 @@ propuestos por Acámica con el fin de que sirva de repaso en cualquier momento d
   ```
 
 - Obterner cambios del servidor de git
+
   ```bash
   git pull origin "<<nombre_rama>>"
   ```
@@ -55,57 +56,57 @@ propuestos por Acámica con el fin de que sirva de repaso en cualquier momento d
 
 - Actualizar su repositorio
 
-  ```bash
+  ```
   git fetch origin
   ```
 
-- Pasarme a la rama de desarrollo
+- Pasarme a cualquier rama
 
   ```bash
+  git checkout "<<nombre_rama>>"
   git checkout development
   ```
 
 - Crear una nueva rama
-
   ```bash
   git checkout -b feature/class-"numeroClase-nombreEstudiante"
   ```
-
-## Para ejecutar el archivo index.js (Node):
-
-```bash
-  node src/classes/"nombreClase"/index.js
-```
 
 ## Comando basicos con npm
 
 - Inicializar el proyecto:
 
-  ```bash
+  ```
   npm init
   ```
 
 - instalar una dependencia
 
   ```bash
-  npm install nombre_libreria --save
+  npm install "nombre_libreria" --save
   ```
 
 - Instalar una dependencia de desarrollo
 
   ```bash
-  npm install nombre_libreria --save-dev
+  npm install "nombre_libreria" --save-dev
   ```
 
 - Instalar una libreria de manera global
 
   ```bash
-  npm install nombre_libreria -g
+  npm install "nombre_libreria" -g
   ```
 
   - **Nota:** Si clonaste un proyecto debes de ejecutar el siguiente comando
-  para obtener todas las depencias y este funcione correctamente:
+    para obtener todas las depencias y este funcione correctamente:
 
-    ```bash
+    ```
     npm install
     ```
+
+## Para ejecutar el nuestra aplicación (index.js)
+
+```bash
+  node src/classes/"nombreClase"/index.js
+```
