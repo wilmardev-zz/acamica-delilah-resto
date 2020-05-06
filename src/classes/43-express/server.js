@@ -4,8 +4,7 @@ const express = require("express");
 // Creamos el servidor express
 const server = express();
 
-const fotos = [
-    {
+const fotos = [{
         id: 1,
         title: "ejemplo1",
         url: "https://imagen.com"
@@ -27,32 +26,30 @@ server.get("/api/health", (req, res) => {
 });
 
 server.get("/api/v1/fotos/1", (req, res) => {
-    res.status(200).json(
-        {
-            id: 1,
-            title: "ejemplo 1",
-            url: "https://imagen.com"
-        }
-    );
+    res.status(200).json({
+        id: 1,
+        title: "ejemplo 1",
+        url: "https://imagen.com"
+    });
 });
 
 server.get("/api/fotos/:id", (req, res) => {
     let id = parseInt(req.params.id)
-    let foto  = fotos.filter(element => element.id === id );
+    let foto = fotos.filter(element => element.id === id);
     res.status(200).json(foto);
 });
 
 server.get("/api/fotos/:id/:date", (req, res) => {
     let index = req.params.id
     let date = req.params.date
-    res.status(200).json({index: index, feche: date});
+    res.status(200).json({ index: index, feche: date });
 });
 
 server.get("/api/fotos/", (req, res) => {
-    const {id, titulo} = req.query
+    const { id, titulo } = req.query
     let foto = fotos.filter(element => {
-        if (element.id === parseInt(id)
-            && element.title === titulo) {
+        if (element.id === parseInt(id) &&
+            element.title === titulo) {
             return element;
         }
     })
@@ -73,3 +70,5 @@ server.get("/api", (req, res) => {
 server.listen(5900, () => {
     console.log("Servidor iniciado...");
 });
+
+///
