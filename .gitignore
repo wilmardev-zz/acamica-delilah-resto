@@ -1,8 +1,4 @@
 .vscode
-<<<<<<< HEAD
-node_modules
-=======
 node_modules
 .idea
 package-lock.json
->>>>>>> fd3d96811b19cfe3936c0155d8a48bb877dad99a
