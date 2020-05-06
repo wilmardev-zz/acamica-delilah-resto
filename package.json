@@ -13,7 +13,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon node src/classes/43-express/server.js"
+    "example": "nodemon node src/classes/43-express/server.js",
+    "dev": "nodemon node src/classes/43-express/actividad-clase/classServer.js"
   },
   "repository": {
     "type": "git",
