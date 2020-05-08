@@ -1,6 +1,7 @@
 const express = require("express");
 const server = express();
 const datos = require("../43-express/alumnos.json");
+const bodyParser = require('body-parser');
 const port = 3000;
 
 const middlewareGlobal = (req, res, next) => {
@@ -26,6 +27,17 @@ const middlewareEspecifico = (req, res, next) => {
 };
 
 server.use(middlewareGlobal); // Usamos nuestro primer middleware
+server.use(bodyParser.json());
+
+const login = (req, res, next) => {
+  const {user, pass} = req.body;
+  if(user !== "acamica" || pass !== "2020") {
+    return res.status(403).json({ message: "Unauthorized" });
+  }
+  next();
+};
+
+
 // server.use(segundoMiddleware); // Usamos nuestro segundo middleware
 
 server.get("/", (req, res) => {
@@ -36,6 +48,12 @@ server.get("/", (req, res) => {
 server.get("/acamica/alumnos/:user", middlewareEspecifico, (req, res) => {
   res.json(datos);
 });
+
+//  api de contacto
+server.post("/acamica/login",  login,  (req, res) => {
+  return res.status(200).json({ message: " user authorized" });
+})
+
 
 server.listen(port, () => {
   console.log("Primer Servidor iniciado en el puerto: " + port);
