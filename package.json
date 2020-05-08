@@ -24,6 +24,7 @@
   "homepage": "https://github.com/wilmardev/acamica-delilah-resto#readme",
   "dependencies": {
     "cool-images": "^1.0.3",
+    "express": "^4.17.1",
     "moment": "^2.24.0"
   },
   "devDependencies": {
