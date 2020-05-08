@@ -29,7 +29,8 @@ const middlewareEspecifico = (req, res, next) => {
 server.use(middlewareGlobal); // Usamos nuestro primer middleware
 server.use(bodyParser.json());
 
-const login = (req, res, next) => {
+const login = (error, req, res, next) => {
+  if(error) return res.status(500);
   const {user, pass} = req.body;
   if(user !== "acamica" || pass !== "2020") {
     return res.status(403).json({ message: "Unauthorized" });
