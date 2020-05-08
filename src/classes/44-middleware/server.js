@@ -38,5 +38,5 @@ server.get("/acamica/alumnos/:user", middlewareEspecifico, (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log("Primer Servidor iniciado en el puerto: " + port);
+  console.log("Servidor iniciado en el puerto: " + port);
 });
