@@ -18,7 +18,7 @@ server.get('/acamica/alumnos/:id', (req, res) => {
     const alumno = datos.alumnos.find(a =>  a.id === parseInt(req.params.id));
     if (!alumno) {
         res.statusCode = 404;
-        res.json('Alumno inexistente')
+        res.json({message: 'Alumno inexistente'});
     } else {
         res.json(alumno);
     }
