@@ -1,0 +1,82 @@
+{
+  "autores": [
+    {
+      "id": 0,
+      "nombre": "Fernando",
+      "apellido": "González",
+      "fechaDeNacimiento": "24/04/1985",
+      "libros": [
+        {
+          "id": 0,
+          "titulo": "Viaje a Pie",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1929
+        },
+        {
+          "id": 1,
+          "titulo": "Pensamientos de un Viejo",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1916
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "nombre": "E. L.",
+      "apellido": "James",
+      "fechaDeNacimiento": "7/03/1963",
+      "libros": [
+        {
+          "id": 0,
+          "titulo": "Cincuenta Sombras de Grey",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 2011
+        },
+        {
+          "id": 1,
+          "titulo": "Cincuenta Sombras más Oscuras",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 2012
+        },
+        {
+          "id": 2,
+          "titulo": "Cincuenta Sombras Liberadas",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 2012
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Friederich",
+      "apellido": "Nietzsche",
+      "fechaDeNacimiento": "15/10/1844",
+      "libros": [
+        {
+          "id": 0,
+          "titulo": "Humano, Demasiado Humano",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1878
+        },
+        {
+          "id": 1,
+          "titulo": "El Anticristo",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1888
+        },
+        {
+          "id": 2,
+          "titulo": "Así Habló Zaratustra",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1883
+        },
+        {
+          "id": 3,
+          "titulo": "La Genealogía de la Moral",
+          "descripcion": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "anioPublicacion": 1887
+        }
+      ]
+    }
+  ]
+}
