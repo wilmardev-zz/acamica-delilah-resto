@@ -15,9 +15,17 @@ server.get("/api/v1/autores", (req, res) => {
 });
 
 server.post("/api/v1/autores", (req, res) => {
+  const { nombre, apellido } = req.body;
+  const nombreExiste = autores.filter((element) => element.nombre === nombre);
+  const apellidoExiste = autores.filter(
+    (element) => element.apellido === apellido
+  );
+  if (nombreExiste.length > 0 && apellidoExiste.length > 0) {
+    return res.status(409).json({ mensaje: "Ya existe" });
+  }
   const autor = req.body;
   autores.push(autor);
-  return res.status(200).json(autores);
+  return res.status(201).json(autor);
 });
 
 server.get("/api/v1/autores/:id", (req, res) => {
@@ -42,11 +50,12 @@ server.delete("/api/v1/autores/:id", (req, res) => {
 });
 
 server.put("/api/v1/autores/:id", (req, res) => {
-  const autor = req.body;
   const indexAutor = autores.findIndex(
-    (autor) => autor.id === parseInt(autor.id)
+    (autor) => autor.id === parseInt(req.params.id)
   );
+  console.log(autores[indexAutor]);
   if (indexAutor > -1) {
+    const autor = req.body;
     autores[indexAutor] = autor;
     return res.status(200).json(autores[indexAutor]);
   }
@@ -55,20 +64,43 @@ server.put("/api/v1/autores/:id", (req, res) => {
 
 server.get("/api/v1/autores/:id/libros", (req, res) => {
   const idAutor = req.params.id;
-  return res.status(200).json(autores[idAutor].libros);
+  const indexAutor = autores.findIndex(
+    (autor) => autor.id === parseInt(idAutor)
+  );
+  if (indexAutor > -1) {
+    return res.status(200).json(autores[idAutor].libros);
+  }
+  return res.status(404).json({ mensaje: "Autor inexistente" });
 });
 
 server.post("/api/v1/autores/:id/libros", (req, res) => {
-  const libro = req.body;
   const idAutor = req.params.id;
-  autores[idAutor].libros.push(libro);
-  return res.status(200).json(autores);
+  const indexAutor = autores.findIndex(
+    (autor) => autor.id === parseInt(idAutor)
+  );
+  if (indexAutor > -1) {
+    const libro = req.body;
+    autores[idAutor].libros.push(libro);
+    return res.status(201).json(libro);
+  }
+  return res.status(404).json({ mensaje: "Autor inexistente" });
 });
 
 server.get("/api/v1/autores/:id/libros/:idLibro", (req, res) => {
   const idAutor = req.params.id;
   const idLibro = req.params.idLibro;
-  return res.status(200).json(autores[idAutor].libros[idLibro]);
+  const indexAutor = autores.findIndex(
+    (element) => element.id === parseInt(idAutor)
+  );
+  if (indexAutor > -1) {
+    const indexLibro = autores[indexAutor].libros.findIndex(
+      (element) => element.id === parseInt(idLibro)
+    );
+    if (indexLibro > -1) {
+      return res.status(200).json(autores[indexAutor].libros[idLibro]);
+    }
+  }
+  return res.status(404).json({ mensaje: "Autor y/o libro inexistente" });
 });
 
 server.delete("/api/v1/autores/:id/libros/:idLibro", (req, res) => {
@@ -77,13 +109,14 @@ server.delete("/api/v1/autores/:id/libros/:idLibro", (req, res) => {
   const indexAutor = autores.findIndex(
     (element) => element.id === parseInt(idAutor)
   );
-  const indexLibro = autores[idAutor].libros.findIndex(
-    (element) => element.id === parseInt(idLibro)
-  );
-
-  if (indexAutor > -1 && indexLibro > -1) {
-    autores[indexAutor].libros.splice(indexLibro, 1);
-    return res.status(204).json();
+  if (indexAutor > -1) {
+    const indexLibro = autores[indexAutor].libros.findIndex(
+      (element) => element.id === parseInt(idLibro)
+    );
+    if (indexLibro > -1) {
+      autores[indexAutor].libros.splice(indexLibro, 1);
+      return res.status(204).json();
+    }
   }
   return res.status(404).json({ mensaje: "Autor y/o libro inexistente" });
 });
@@ -91,18 +124,20 @@ server.delete("/api/v1/autores/:id/libros/:idLibro", (req, res) => {
 server.put("/api/v1/autores/:id/libros/:idLibro", (req, res) => {
   const idAutor = req.params.id;
   const idLibro = req.params.idLibro;
-  const libro = req.body;
   const indexAutor = autores.findIndex(
-    (autor) => autor.id === parseInt(autor.id)
+    (element) => element.id === parseInt(idAutor)
   );
-  const indexLibro = autores[idAutor].libros.findIndex(
-    (element) => element.id === parseInt(idLibro)
-  );
-  if (indexAutor > -1 && indexLibro > -1) {
-    autores[indexAutor].libros.push(libro);
-    return res.status(200).json(autores[indexAutor].libros);
+  if (indexAutor > -1) {
+    const indexLibro = autores[indexAutor].libros.findIndex(
+      (element) => element.id === parseInt(idLibro)
+    );
+    if (indexLibro > -1) {
+      const libro = req.body;
+      autores[indexAutor].libros[indexLibro] = libro;
+      return res.status(200).json(autores[indexAutor].libros[indexLibro]);
+    }
   }
-  return res.status(404).json({ mensaje: "Libro inexistente" });
+  return res.status(404).json({ mensaje: "Autor y/o libro inexistente" });
 });
 
 server.listen(port, () => {
