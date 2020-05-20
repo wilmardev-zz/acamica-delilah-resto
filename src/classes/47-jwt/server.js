@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
-const config = require("../../config/development").config;
+const ENV = process.env.NODE_ENV || "development";
+const config = require("../../config/" + ENV).config;
 const app = express();
 
 app.use(bodyParser.json());
@@ -38,6 +39,7 @@ app.post("/api/v1/acamica/login", (req, res) => {
   return res.status(200).json({ token: jwtToken });
 });
 
+console.log("Environment => ", ENV);
 app.listen(config.Port, () => {
   console.log(`Servidor iniciado en el puerto ${config.Port}`);
 });
