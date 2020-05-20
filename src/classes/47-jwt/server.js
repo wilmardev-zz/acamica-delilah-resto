@@ -7,6 +7,19 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/api/v1/jwt-sing/:name', (req, res) => {
+  let name = req.params.name;
+  let user = {username: name};
+  let token = jwt.sign(user, config.JwtSecretKey);
+  return res.json( {token:  token});
+});
+
+app.get('/api/v1/jwt-verify/:token', (req, res) => {
+  let token = req.params.token
+  let decodificado = jwt.verify(token, config.JwtSecretKey)
+  res.json( { username : decodificado.username });
+});
+
 const validateJwtMiddleware = (req, res, next) => {
   const jwtToken = req.headers["authorization"];
   if (!jwtToken) {
