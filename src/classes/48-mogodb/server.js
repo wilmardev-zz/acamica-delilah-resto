@@ -6,7 +6,6 @@ const { User, UserDb } = require("./entities/user");
 const mongodb = require("./db/mogodb");
 const app = express();
 
-
 app.use(bodyParser.json());
 
 const validateJwtMiddleware = (req, res, next) => {
@@ -36,7 +35,21 @@ app.get("/api/v1/acamica/user", validateJwtMiddleware, (req, res) => {
 });
 
 // Save User
-app.post("/api/v1/acamica/user", validateJwtMiddleware, (req, res) => {
+// app.post("/api/v1/acamica/user", validateJwtMiddleware, (req, res) => {
+//   const { userName, lastName, pass, email, age } = req.body;
+//   // validate data
+//   const userObject = new User(userName, lastName, pass, email, age);
+//   const newUser = new UserDb(userObject);
+//   newUser.save((err, user) => {
+//     if (err) {
+//       return res.status(500).json(err);
+//     }
+//     return res.status(200).json(user);
+//   });
+// });
+
+// Save User test
+app.post("/api/v1/acamica/user", (req, res) => {
   const { userName, lastName, pass, email, age } = req.body;
   // validate data
   const userObject = new User(userName, lastName, pass, email, age);

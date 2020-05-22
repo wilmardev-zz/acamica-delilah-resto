@@ -8,7 +8,8 @@ const config = {
     User: "acamica",
     Password: "acamica123",
   },
-  CnxString: "mongodb+srv://wsduque:TGdNML3hD1qKbMtM@clustertest-6s8tr.mongodb.net/test?retryWrites=true&w=majority",
+  CnxString:
+    "mongodb+srv://admin:znG9eTv3DsTub6q3@cluster0-sjink.mongodb.net/test?retryWrites=true&w=majority",
   // DataBaseConfig: {
   //     CnxString: "mongodb+srv://wsduque:TGdNML3hD1qKbMtM@clustertest-6s8tr.mongodb.net/test?retryWrites=true&w=majority",
   //     User: "wsduque",
