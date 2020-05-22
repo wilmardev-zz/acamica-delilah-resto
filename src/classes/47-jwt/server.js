@@ -1,10 +1,24 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
-const config = require("../../config/development").config;
+const ENV = process.env.NODE_ENV || "development";
+const config = require("../../config/" + ENV).config;
 const app = express();
 
 app.use(bodyParser.json());
+
+app.get('/api/v1/jwt-sing/:name', (req, res) => {
+  let name = req.params.name;
+  let user = {username: name};
+  let token = jwt.sign(user, config.JwtSecretKey);
+  return res.json( {token:  token});
+});
+
+app.get('/api/v1/jwt-verify/:token', (req, res) => {
+  let token = req.params.token
+  let decodificado = jwt.verify(token, config.JwtSecretKey)
+  res.json( { username : decodificado.username });
+});
 
 const validateJwtMiddleware = (req, res, next) => {
   const jwtToken = req.headers["authorization"];
@@ -38,6 +52,7 @@ app.post("/api/v1/acamica/login", (req, res) => {
   return res.status(200).json({ token: jwtToken });
 });
 
+console.log("Environment => ", ENV);
 app.listen(config.Port, () => {
   console.log(`Servidor iniciado en el puerto ${config.Port}`);
 });
