@@ -3,15 +3,9 @@ const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const config = require("../../config/development").config;
 const { User, UserDb } = require("./entities/user");
-const mongoose = require("mongoose");
+const mongodb = require("./db/mogodb");
 const app = express();
 
-mongoose
-  .connect(config.DataBaseConfig.CnxString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connect to Mongo Db successfully.."));
 
 app.use(bodyParser.json());
 

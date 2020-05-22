@@ -8,12 +8,13 @@ const config = {
     User: "acamica",
     Password: "acamica123",
   },
-  DataBaseConfig: {
-      CnxString: "mongodb+srv://wsduque:TGdNML3hD1qKbMtM@clustertest-6s8tr.mongodb.net/test?retryWrites=true&w=majority",
-      User: "wsduque",
-      Pass: "TGdNML3hD1qKbMtM"
-  },
-  Url_db : "mongodb+srv://acamica:Qt0KH7hbCqixoVvH@acamica-db-g9lsi.mongodb.net/acamica-db"
+  CnxString: "mongodb+srv://wsduque:TGdNML3hD1qKbMtM@clustertest-6s8tr.mongodb.net/test?retryWrites=true&w=majority",
+  // DataBaseConfig: {
+  //     CnxString: "mongodb+srv://wsduque:TGdNML3hD1qKbMtM@clustertest-6s8tr.mongodb.net/test?retryWrites=true&w=majority",
+  //     User: "wsduque",
+  //     Pass: "TGdNML3hD1qKbMtM"
+  // },
+  // Url_db : "mongodb+srv://acamica:Qt0KH7hbCqixoVvH@acamica-db-g9lsi.mongodb.net/acamica-db"
 };
 // https://www.grc.com/passwords.htm
 module.exports = { config };
