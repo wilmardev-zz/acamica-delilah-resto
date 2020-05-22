@@ -18,5 +18,5 @@ app.get('/delete/:name', routes.delete);
 app.get('/model', routes.modelName);
 
 app.listen(config.Port, function () {
-    console.log('listening on http://localhost:8000');
+    console.log('listening on http://localhost:5500');
 });

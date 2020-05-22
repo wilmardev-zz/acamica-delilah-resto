@@ -10,7 +10,7 @@ exports.home = (req, res, next)  => {
 
 exports.search = (req, res, next)  => {
     let name = req.params.name;
-    model.find({ name : name}, function(err, doc) {
+    model.find({ name :  new RegExp(name, "i")}, function(err, doc) {
         if (err) return next(err);
         res.status(200).json(doc);
     });
@@ -31,8 +31,8 @@ exports.update = (req, res, next)  => {
 exports.update_v2 = (req, res, next)  => {
     let name = req.params.name;
     let number  =  Math.random() * (100 - 3) + 3;
-    let newName =  name + "-" + number;
-    model.update({ name : new RegExp('^'+name+'$', "i")} , { name : newName} , function(err, doc) {
+    let newName =  name + "-  acamica" ;
+    model.update({ name : new RegExp(name, "i")} , { name : newName} , function(err, doc) {
         if (err) return next(err);
         res.status(200).json(doc);
     });
@@ -40,7 +40,7 @@ exports.update_v2 = (req, res, next)  => {
 
 exports.delete = (req, res, next)  => {
     let name = req.params.name;
-    model.deleteOne({ name : name} , function(err, doc) {
+    model.findOneAndRemove({ name : name} , function(err, doc) {
         if (err) return next(err);
         res.status(200).json(doc);
     });
