@@ -36,7 +36,7 @@ app.get("/api/v1/acamica/user", validateJwtMiddleware, (req, res) => {
 });
 
 // Save User
-app.post("/api/v1/acamica/user", validateJwtMiddleware, (req, res) => {
+app.post("/api/v1/acamica/user", (req, res) => {
   const { userName, lastName, pass, email, age } = req.body;
   // validate data
   const userObject = new User(userName, lastName, pass, email, age);
