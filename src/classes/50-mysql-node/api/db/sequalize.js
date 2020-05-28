@@ -23,4 +23,5 @@ sequelize.sync({ force: false })
 module.exports = {
     Author,
     Book,
+    sequelize
 }

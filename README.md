@@ -110,3 +110,6 @@ propuestos por Acámica con el fin de que sirva de repaso en cualquier momento d
 ```bash
   node src/classes/"nombreClase"/index.js
 ```
+## colecion publica  -- postman
+
+https://www.getpostman.com/collections/2c7bfa6dd2e2c85f22f8 

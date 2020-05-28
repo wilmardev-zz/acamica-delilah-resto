@@ -1,4 +1,5 @@
-const { Book } = require('../db/sequalize.js')
+const { Book , sequelize } = require('../db/sequalize.js')
+
 
 const create = (req, res, next)  => {
     console.log("book==>", req.body)
@@ -9,6 +10,12 @@ const create = (req, res, next)  => {
 const list = (req, res, next)  => {
     Book.findAll().then(books =>
         res.json(books))
+};
+
+const listQuery = (req, res, next)  => {
+    sequelize.query('select * from books', {type :  sequelize.QueryTypes.SELECT})
+        .then(books =>
+            res.json(books))
 };
 
 const search = (req, res, next)  => {
@@ -22,5 +29,6 @@ const search = (req, res, next)  => {
 module.exports = {
     search,
     list,
+    listQuery,
     create
 }
