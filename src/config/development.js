@@ -13,7 +13,13 @@ const config = {
     //     User: "wsduque",
     //     Pass: "TGdNML3hD1qKbMtM"
     // },
-    // Url_db : "mongodb+srv://acamica:Qt0KH7hbCqixoVvH@acamica-db-g9lsi.mongodb.net/acamica-db"
+    MysqlConfig: {
+        Db: 'acamica_class49',
+        User: "root",
+        Password: "ohmyfi",
+        Host: "localhost",
+        Dialect : 'mysql'
+    },
 };
 // https://www.grc.com/passwords.htm
 module.exports = { config };

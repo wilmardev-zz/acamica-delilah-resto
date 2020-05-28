@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const ENV = process.env.NODE_ENV || "development";
 const config = require("../../../config/" + ENV).config;
 
-global.db = mongoose.connect(config.Url_db, {useUnifiedTopology: true, useNewUrlParser: true});
+global.db = mongoose.connect(config.CnxString, {useUnifiedTopology: true, useNewUrlParser: true});
 
 const routes = require('./routes');
 
