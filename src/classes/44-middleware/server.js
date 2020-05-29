@@ -17,9 +17,10 @@ const middlewareGlobal = (req, res, next) => {
 
 const middlewareVerify = (req, res, next) => {
     const { name, lastName, email } = req.body;
+    //console.log(email);
 
     if (!name || !lastName || !email) {
-        return res.status(400).json({ message: "hay datos vacíos" })
+        return res.status(400).json({ message: "hay datos vacíos" });
     }
     next();
 }
@@ -39,7 +40,7 @@ server.get('/demo', (req, res) => {
     res.json("Demo");
 });
 
-server.post('/contact', (req, res) => {
+server.post('/contact', middlewareVerify, (req, res) => {
     contactos.push(req.body);
     res.json("Contact");
 });
