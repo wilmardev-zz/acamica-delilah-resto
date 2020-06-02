@@ -24,15 +24,13 @@ const update = (req, res, next) => {
       returning: true,
       where: { id: req.params.id },
     }
-  ).then(function ([rowsUpdate, [updatedSong]]) {
-    res.json(updatedSong);
-  });
+  ).then(res.status(200).json(req.body));
 };
 
 const deleteSong = (req, res, next) => {
-  Song.findOne({
+  Song.destroy({
     where: { id: req.params.id },
-  }).then((song) => res.json(song));
+  }).then(res.status(204).json());
 };
 
 module.exports = {
