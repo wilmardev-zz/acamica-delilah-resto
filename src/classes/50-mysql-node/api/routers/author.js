@@ -7,6 +7,7 @@ const create = (req, res, next)  => {
 };
 
 const list = (req, res, next)  => {
+    // select  * from autor
     Author.findAll().then(books =>
         res.json(books))
 };
